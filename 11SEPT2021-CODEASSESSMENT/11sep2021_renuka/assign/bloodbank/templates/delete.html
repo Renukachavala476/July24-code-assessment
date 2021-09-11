@@ -1,0 +1,75 @@
+{% extends 'header.html'%}
+{% block myContent %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+        <form action="http://127.0.0.1:8000/donor/deletesearchapi/" method="post">
+            <table class="table">
+                <tr>
+                    <td>Donor Code</td>
+                    <td><input name="donorcode" type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" class="btn btn-success">SEARCH</button></td>
+                </tr>
+    
+
+            </table>
+        </form>
+        
+
+            {% if data %}
+            <form action="http://localhost:8000/donor/deleteactionapi/" method="POST">
+            <table class="table">
+                {% for i in data %}
+                <tr>
+                    <td></td>
+                    <td> <input name="newid" value="{{i.id}}" type="hidden" class="formcontrol" readonly> </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input name="newname" value="{{i.name}}" type="text" class="formcontrol"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input name="newaddress" value="{{i.address}}" type="text" class="formcontrol"></td>
+                </tr>  
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input name="newmobilenumber" value="{{i.mobilenumber}}" type="text" class="formcontrol"></td>
+                </tr>
+                <tr>
+                    <td>Donor Code</td>
+                    <td><input name="newdonorcode" value="{{i.donorcode}}" type="text" class="formcontrol"></td>
+                </tr>
+                <tr>
+                    <td>Blood Group</td>
+                    <td><input name="newbloodgroup" value="{{i.bloodgroup}}" type="text" class="formcontrol"></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input name="newusername" value="{{i.username}}" type="text" class="formcontrol"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input name="newpassword" value="{{i.password}}" type="text" class="formcontrol"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><button class="btn btn-secondary">DELETE</button></td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </form>
+           
+
+            {% endif %}
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+    </div>
+</div>
+{% endblock %}

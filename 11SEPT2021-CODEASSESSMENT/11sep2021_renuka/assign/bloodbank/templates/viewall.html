@@ -1,0 +1,80 @@
+
+
+{% extends 'header.html' %} 
+
+{% block myContent %}
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col col-12 col-sm-2 col-md-2">
+
+    </div>
+    <div class="col col-12 col-sm-8 col-md-8">
+      <form action="http://127.0.0.1:8000/employee/eadd/" method="post">
+
+        <table class="table table-boarderless">
+          <tr>
+            <td>Employee code</td>
+            <td><input name="empcode" type="text" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td><input name="name" type="text" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Designation</td>
+            <td><input name="empdesig" type="text" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Salary</td>
+            <td><input name="empsalary" type="text" class="form-control"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><center>   <button type="submit" class="btn btn-success">SEND</button></center>  </td>
+          </tr>
+          <div class="col col-12 col-sm-2 col-md-2">
+
+          </div>
+
+        </table>
+      </form>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+    <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+    <table class="tabel">
+      <thead class="tabel">
+        <tr>
+          <th>Donor code</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Mobile Number</th>
+          <th>Blood Group</th>
+        </tr>
+      </thead>
+      {% for i in data %}
+      <tbody>
+        <tr>
+          <td>{{i.donorcode   }}</td>
+          <td>{{i.name  }}</td>
+          <td>{{i.address  }}</td>
+          <td>{{i.mobilenumber  }}</td>
+          <td>{{i.bloodgroup  }}</td>
+        </tr>
+      {% endfor %}
+
+      </tbody>
+    
+
+    </table>
+    </div>
+    
+
+    <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+  </div>
+</div>
+{% endblock %}
