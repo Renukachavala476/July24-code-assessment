@@ -1,0 +1,21 @@
+
+td {
+    color:darkblue;
+    }
+h2{
+    color:midnightblue;
+    }
+tr.hover:hover{background-color: rgb(217, 255, 0);}
+
+#view {
+    border: 1px solid black;
+  }
+
+#head{
+    background-color: tomato;
+}
+
+#bgimg{
+    background-size : cover;
+    opacity:1;
+}
