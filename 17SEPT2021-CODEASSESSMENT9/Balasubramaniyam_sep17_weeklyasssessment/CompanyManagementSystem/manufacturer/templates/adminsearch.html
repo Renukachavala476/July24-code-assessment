@@ -1,0 +1,61 @@
+{% extends 'adminindex.html' %}
+
+{% block mycontent %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+      <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+          <form action="./searchseller" method="post">
+          <table>
+              <tr>
+                  <td>Enter Mobile Number:</td>
+                  <td><input type="text" class="form-control" name="mobile">
+                  </td>
+              </tr>
+              <tr>
+                  <td></td>
+                  <td><button class="btn btn-success">Search</button></td>
+              </tr>
+          </table>
+        </form>
+        {% if data %}
+        <table class="table borderless">   
+                {% for i in data %}
+                <tr>
+                    <td>id</td>
+                    <td><input type="number" name="id" class="form-control" value={{i.id}}></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" class="form-control" value={{i.name}}></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type="text" name="address" class="form-control" value={{i.address}}></td>
+
+                </tr>
+                <tr>
+                    <td>ShopName</td>
+                    <td><input type="text" name="shopname" class="form-control"value={{i.shopname}}></td>
+
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type="number" name="mobile" class="form-control"value={{i.mobile}}></td>
+
+                </tr>
+                
+                <tr>
+                    <td>Username</td>
+                    <td><input type="username" name="username" class="form-control"value={{i.username}}></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+      </div>
+    </div>
+</div>
+
+{% endblock %}

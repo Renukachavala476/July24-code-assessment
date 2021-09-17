@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <div class="container-fluid">
+              <a class="navbar-brand" href="./">seller</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" href="./logout">logout</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+<table class="table borderless">   
+    {% for i in data %}
+    <form action="./changepassword" method="GET">
+    <tr>
+        <td>id</td>
+        <td><input type="number" name="id" class="form-control" hidden value={{i.id}}></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" name="name" class="form-control" value={{i.name}}></td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td><input type="text" name="address" class="form-control" value={{i.address}}></td>
+
+    </tr>
+    <tr>
+        <td>ShopName</td>
+        <td><input type="text" name="shopname" class="form-control"value={{i.shopname}}></td>
+
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><input type="number" name="mobile" class="form-control"value={{i.mobile}}></td>
+
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td><input type="username" name="username" class="form-control"value={{i.username}}></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="text" name="password" class="form-control" value={{i.password}}></td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-success">changepassword</button></td>
+    </tr>
+
+    </form>
+    {% endfor %}
+</table>
+{% if password %}
+<table class="table">
+<form action="./changepassword" method="POST">
+    {% for i in data %}
+    <tr>
+        <td>id</td>
+        <td><input type="number" name="id" hidden class="form-control" value={{i.id}}></td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>Password</td>
+        <td><input type="password" name="password" class="form-control"></td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-success" type="submit">changepassword</button></td>
+    </tr>
+</form>
+</table>
+{% endif %}
+</body>
+</html>
