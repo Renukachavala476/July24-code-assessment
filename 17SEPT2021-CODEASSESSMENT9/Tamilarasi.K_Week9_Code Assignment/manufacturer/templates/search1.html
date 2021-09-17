@@ -1,0 +1,55 @@
+{% extends 'adminview.html' %}
+{% block myContent %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col sm-2 col cd-2 col lg-2 col xl-2 col xxl-2"></div>
+        <div class="col col-12 col sm-8 col cd-8 col lg-8 col xl-8 col xxl-8">
+<form action="http://127.0.0.1:8000/manufacturer/search1/" method="POST">
+            <table class="table table-striped">
+                <center><h2>SEARCH SELLER</h2></center>
+                <tr>
+                    <td><font color="black">Name</font></td>
+                    <td><input name="name" placeholder="Enter the Seller Name" type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="Submit" class="class btn btn-warning">Search</button></td>
+                </tr>
+            </table>
+</form>
+{%if data%}
+<table class="table table-striped">
+    {% for i in data %}
+       
+        <tr>
+            <td>Name</td>
+            <td>{{i.name}}</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>{{i.address}}</td>
+        </tr>
+        <tr>
+            <td>Shop Name</td>
+            <td>{{i.shopname}}</td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>{{i.mobilenumber}}</td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>{{i.username}}</td>
+        </tr>
+        <tr>
+            <td>Password </td>
+            <td>{{i.password}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    {% endif %}
+    <div class="col col-12 col sm-2 col cd-2 col lg-2 col xl-2 col xxl-2"></div>
+        </div>
+    </div>
+    {% endblock %}
