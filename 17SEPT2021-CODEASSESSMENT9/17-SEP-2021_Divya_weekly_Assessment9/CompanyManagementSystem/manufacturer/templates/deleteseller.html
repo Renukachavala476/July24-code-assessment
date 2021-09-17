@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:8000/manufacturer/selldelete/" method="post">
+        <table class="table">
+            <tr>
+                <td>Shop Name</td>
+                <td><input name="shop_name" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><Button type="submit" class="btn btn-success">SEARCH</Button></td>
+            </tr>
+        </table>
+    </form>
+    {% if data %}
+    <form action="http://127.0.0.1:8000/manufacturer/sellactiondel/" method="post">
+        <table class="table table-borderless">
+            {% for i in data %}
+            <tr>
+                <td></td>
+                <td><input name="newid" value="{{i.id}}" type="hidden" class="form-control"></td>
+            </tr>
+            <tr>
+                <td> Name</td>
+                <td><input name="newsellname" value="{{i.sellname}}" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input name="newselladdress" value="{{i.selladdress}}" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Shop Name</td>
+                <td><input name="newshop_name" value="{{i.shop_name}}" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Mobile No</td>
+                <td><input name="newsellmobile" value="{{i.sellmobile}}" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>USERNAME</td>
+                <td><input name="newsellusername" value="{{i.sellusername}}" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>PASSWORD</td>
+                <td><input name="newsellpassword" value="{{i.sellpassword}}" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><Button type="submit" class="btn btn-danger">DELETE</Button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>  
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
