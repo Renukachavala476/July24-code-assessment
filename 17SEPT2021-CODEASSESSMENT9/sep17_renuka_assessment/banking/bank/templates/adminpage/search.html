@@ -1,0 +1,60 @@
+{% extends 'header.html' %}
+
+{% block mycontent %}
+
+
+    <div class="container">
+        <div class="row">
+                <div class="col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+                <div class="col col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+                    <form action="http://127.0.0.1:8000/bank/search/" method="post">
+
+                      <table class="table table-borderless" class="form-control">
+                        <tr>
+                            <td>Customer Name</td>
+                            <td><input name="name" type="text" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button  type="submit" class="btn btn-info">SEARCH</button></td>
+                        </tr>
+                       </table>
+                    </form>
+                         {% if data %}    
+                         <table class="table table-borderless">
+                            {% for i in data %}
+
+                            <tr>
+                                <td>Customer Name</td>
+                                <td>{{i.name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>{{i.address}}</td>
+                            </tr>
+                            <tr>
+                                <td>Bankbalance</td>
+                                <td>{{i.bankbalance}}</td>
+                            </tr>
+                            <tr>
+                                <td>Mobilenumber</td>
+                                <td>{{i.mobile}}</td>
+                            </tr>
+                            <tr>
+                                <td>Username</td>
+                                <td>{{i.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td>{{i.password}}</td>
+                            </tr>
+                            {% endfor %}
+                         </table> 
+                            {% endif %}
+                    </div>
+                    <div class="col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+            </div>
+        </div>
+        
+    
+{% endblock %}
