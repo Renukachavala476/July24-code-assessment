@@ -1,0 +1,71 @@
+{% extends 'header.html' %}
+
+{% block mycontent %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+
+        </div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+         <form action="http://127.0.0.1:8000/manufacturer/delete_search/" method="post">
+     
+        <table class="table table-borderless">
+            <tr>
+                <td> Seller_Name </td>
+                <td> <input name="name" type="text" class="form-control"> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>  <center> <Button type="submit" class="btn btn-success"> SEARCH </Button> </center></td>
+            </tr>
+        </table>
+    </form>
+
+     {% if data  %}
+   <form action="http://127.0.0.1:8000/manufacturer/delete/" method="post">
+    <table class="table table-borderless">
+        <tr>
+            <td>  </td>
+            <td> <input name="newId" value="{{data.id}}" type="hidden" class="form-control" > </td>
+        </tr>
+         <tr>
+             <td> Seller Name </td>
+             <td> <input name="newname" value=" {{data.name}}" type="text" class="form-control" readonly> </td>
+         </tr>
+         <tr>
+            <td> Address </td>
+            <td> <input name="newaddress"  value=" {{data.address}}" type="text" class="form-control"readonly> </td>
+        </tr>
+        <tr>
+            <td> Shop_Name </td>
+            <td> <input name="newshop_name"  value=" {{data.shop_name}}" type="text" class="form-control"readonly> </td>
+        </tr>
+        <tr>
+            <td> Phone_Number </td>
+            <td> <input name="newphone_no"  value=" {{data.phone_no}}" type="text" class="form-control"readonly> </td>
+        </tr>
+        <tr>
+            <td> UserName </td>
+            <td> <input name="newusername"  value=" {{data.username}}" type="text" class="form-control"readonly> </td>
+        </tr>
+        <tr>
+            <td> Password </td>
+            <td> <input name="newpassword"  value=" {{data.password}}" type="text" class="form-control"readonly> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <center> <Button type="submit" class="btn btn-primary">  DELETE DETAILS</Button> </center> </td>
+        </tr>
+     </table>
+   </form>
+    
+         {% endif  %}
+
+        </div>
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
