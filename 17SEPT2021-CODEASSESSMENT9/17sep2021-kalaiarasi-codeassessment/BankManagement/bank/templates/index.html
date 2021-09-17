@@ -1,0 +1,47 @@
+{% extends 'header.html' %}
+{% block mycontent %}
+<title>addpage</title>
+ <body >
+    <div class="container">
+        
+        <div class="row">
+            <div class="col col-12 col-sm-2 col-md-2 col-xl-2 col-xxl-2"></div>
+            <div class="col col-12 col-sm-8 col-md-8 col-xl-8 col-xxl-8">
+                <form action="http://127.0.0.1:8000/bank/add/" method="post">
+                    <table class="table table-borderless">
+                        <tr>
+                            <td style="font-family:Georgia, 'Times New Roman', Times, serif;">Name</td>
+                            <td><input name="name" type="text" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td style="font-family:Georgia, 'Times New Roman', Times, serif;">Address</td>
+                            <td><textarea name="address" id="" cols="30" rows="5" class="form-control"></textarea></td>             
+                        </tr>
+                        <tr>
+                            <td style="font-family:Georgia, 'Times New Roman', Times, serif;">Bankbalance</td>
+                            <td><input type="number" name="bankbalance"class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td style="font-family:Georgia, 'Times New Roman', Times, serif;">Mobnum</td>
+                            <td><input type="number" name="mobnum"class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td style="font-family:Georgia, 'Times New Roman', Times, serif;">Username</td>
+                            <td><input type="text" name="username"class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td style="font-family:Georgia, 'Times New Roman', Times, serif;">Password</td>
+                            <td><input type="number" name="password"class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button class="btn btn-success">SUBMIT</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="col col-12 col-sm-2 col-md-2 col-xl-2 col-xxl-2"></div>
+        </div>
+    </div>
+</body>
+{% endblock %}
