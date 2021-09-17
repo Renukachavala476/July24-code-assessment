@@ -1,0 +1,49 @@
+{% extends 'custhead.html' %}
+{% block myContent %}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+            <form action="http://127.0.0.1:8000/bank/updatecust/" method="post">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>Phone Number</td>
+                        <td><input name="mobno" type="number" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><center><button class="btn btn-primary" type="submit" >Search</button></center></td>
+                    </tr>
+                </table>
+            </form>
+
+            {% if data %}
+           <form action="http://127.0.0.1:8000/bank/update_datacust/" method="post">
+            <table class="table table-borderless">
+                {% for i in data %}
+                <tr>
+                    <td></td>
+                    <td><input name="newid" value="{{i.id}} "type="hidden" class="form-control"></td>
+                </tr>
+               
+                <tr>
+                    <td>Password</td>
+                    <td><input name="newpassword" value="{{i.password}}" type="password" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" class="btn btn-warning">Update</button></td>
+                </tr>
+                {% endfor %}
+            </table>
+           </form>
+            {% endif %}
+        </div>
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}
