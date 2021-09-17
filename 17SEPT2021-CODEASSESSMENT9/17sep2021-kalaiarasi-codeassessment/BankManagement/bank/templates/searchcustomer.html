@@ -1,0 +1,68 @@
+{% extends 'header.html' %}
+{% block mycontent %}
+<title>search page</title>
+
+<div class="container">
+    <body>
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-xl-2 col-xxl-2"></div>
+        <div class="col col-12 col-sm-8 col-md-8 col-xl-8 col-xxl-8">
+            <form action="http://127.0.0.1:8000/bank/search/" method="POST">
+                <table class="table table-borderless">
+                    <tr>
+                        <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight:bold; color:navy;">Mobnum</td>
+                        <td><input type="number" name="mobnum"class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-success">SEARCH</button></td>
+                    </tr>
+                </table>
+            </form>
+
+                {% if data %}
+
+                    <table class="table table-borderless table-striped">
+                        {% for i in data %}
+                            <tr>
+                                <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight:bold; color:sienna">Name</td>
+                                <td>{{i.name}}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight:bold; color:sienna;">Address</td>
+                                <td>{{i.address}}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight:bold; color:sienna;">Bankbalance</td>
+                                <td>{{i.bankbalance}}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight:bold; color:sienna;">Mobnum</td>
+                                <td>{{i.mobnum}}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight:bold; color:sienna;">Username</td>
+                                <td>{{i.username}}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight:bold; color:sienna;">Password</td>
+                                <td>{{i.password}}</td>
+                            </tr>
+
+                        {% endfor %}    
+                    </table>
+                {% endif %}
+        </div>
+        
+        <div class="col col-12 col-sm-2 col-md-2 col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+
