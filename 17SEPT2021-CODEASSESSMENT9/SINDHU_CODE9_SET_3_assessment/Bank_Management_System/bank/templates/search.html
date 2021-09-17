@@ -1,0 +1,59 @@
+{%extends 'adminview.html'%}
+{%block myContent%}
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 "></div>
+            <div class="col col-12 col-sm-8 col-md-8 col-xl-8 col-xl-8 col-xxl-8">
+                
+                <form action="http://127.0.0.1:8000/bank/search/" method="post">
+            <table class="table table-borderless">
+        <tr>
+            <td>NAME</td>
+            <td><input name="name" type="text" class="form-control"></td>
+        </tr>
+        
+        
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-success">SEARCH</Button></td>
+        </tr>
+    </table>
+    </form>
+    {% if data %}
+    <table class="table">
+     {% for i in data %}
+     <tr>
+         <td>NAME</td>
+         <td>{{i.name}}</td>
+     </tr>
+    <tr>
+        <td>ADDRESS</td>
+        <td>{{i.address}}</td>
+    </tr>
+    <tr>
+        <td>BANK_BALANCE</td>
+        <td>{{i.bankbal}}</td>
+    </tr>
+    <tr>
+        <td>MOBILE_NO</td>
+        <td>{{i.mobileno}}</td>
+    </tr>
+    <tr>
+    <td>USERNAME</td>
+    <td>{{i.username}}</td>
+    </tr>
+    <tr>
+        <td>PASSWORD</td>
+        <td>{{i.password}}</td>
+    </tr>
+    
+     {% endfor %}
+</table>
+    </div>
+    {% endif %}
+<div class="col-12 col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+ 
+</div>
+</div>   
+
+{%endblock%}

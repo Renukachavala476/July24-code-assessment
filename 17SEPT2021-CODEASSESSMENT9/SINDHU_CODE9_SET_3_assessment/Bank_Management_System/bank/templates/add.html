@@ -1,0 +1,47 @@
+{% extends 'adminview.html' %}
+{% block myContent %}
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 "></div>
+            <div class="col col-12 col-sm-8 col-md-8 col-xl-8 col-xl-8 col-xxl-8">
+                
+        <form action="http://127.0.0.1:8000/bank/addcustomer/" method="post">
+            <table class="table table-borderless">
+
+        <tr>
+            <td>NAME</td>
+            <td> <input name="name" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>ADDRESS</td>
+            <td> <input name="address" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>BANK_BALANCE</td>
+            <td> <input name="bankbal" type="number" class="form-control"></td>
+        </tr>
+        <tr>
+            <td> MOBILE_NUMBER </td>
+            <td> <input name="mobileno" type="number" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>USERNAME</td>
+            <td> <input name="username" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td> PASSWORD </td>
+            <td> <input name="password" type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-success">ADD</Button></td>
+        </tr>
+    </form>
+    </table>
+    </div>
+<div class="col-12 col-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2"></div>
+ 
+</div>
+</div>   
+
+{% endblock %}

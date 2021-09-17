@@ -1,0 +1,70 @@
+{%extends 'adminview.html'%}
+{%block myContent%}
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 "></div>
+            <div class="col col-12 col-sm-8 col-md-8 col-xl-8 col-xl-8 col-xxl-8">
+                
+                <form action="http://127.0.0.1:8000/bank/updatesearch/" method="post">
+            <table class="table table-borderless">
+        <tr>
+            <td>NAME</td>
+            <td><input name="name" type="text" class="form-control"></td>
+        </tr>
+        
+        
+        <tr>
+            <td></td>
+            <td><Button type="submit" class="btn btn-success">SEARCH</Button></td>
+        </tr>
+    </table>
+    </form>
+    {% if data %}
+    <form action="http://127.0.0.1:8000/bank/update_action_api/" method="post">
+    <table class="table">
+       
+     {% for i in data %}
+     <tr>
+        <td></td>
+        <td> <input name="newid" value="{{i.id}}" type="hidden" class="form-control"></td>
+    </tr>
+    <tr>
+        <td>NAME</td>
+        <td> <input name="newname" value="{{i.name}}" type="text" class="form-control"></td>
+    </tr>
+    <tr>
+        <td>ADDRESS</td>
+        <td> <input name="newaddress" value="{{i.address}}" type="text" class="form-control" ></td>
+    </tr>
+    <tr>
+        <td>BANK_BALANCE</td>
+        <td> <input name="newbankbal" value="{{i.bankbal}}" type="number" class="form-control" ></td>
+    </tr>
+    <tr>
+        <td>MOBILE_NUMBER</td>
+        <td> <input name="newmobileno" value="{{i.mobileno}}" type="text" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>USERNAME</td>
+        <td> <input name="newusername" value="{{i.username}}" type="text" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>PASSWORD</td>
+        <td> <input name="newpassword" value="{{i.password}}" type="text" class="form-control" readonly ></td>
+    </tr>
+    
+    <tr>
+        <td></td>
+        <td><Button type="submit" class="btn btn-success">UPDATE</Button></td>
+    </tr>
+     {% endfor %}
+    </form>
+</table>
+    </div>
+    {% endif %}
+<div class="col-12 col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+ 
+</div>
+</div>   
+
+{%endblock%}
