@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+{% block myContent %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-lg-2 col-xl-2">
+        </div>
+        <div class="col col-12 col-sm-8 col-lg-8 col-xl-8">
+          
+          <form action="http://127.0.0.1:8000/manufacture/search/" method="post">
+            <h1 style="color: rgb(155, 26, 86) ; font-size: xx-large; font-style: initial;" > </h1>
+
+          
+            <table class="table table-borderless">
+                
+                <tr>
+                    <td>Mobile </td>
+                    <td> <input name="mno" type="text" class="form-control"></td>
+                </tr>
+                
+                <tr>
+                    <td> </td>
+                    <td> <center><button class="btn btn-danger">Search</button> </center> </td>
+                </tr>
+            </table>
+        </form>
+
+            {% if data %}
+            <table class="table">
+                {% for i in data %}
+<tr>
+    <td>name</td>
+    <td>{{ i.name}}</td>
+</tr>
+
+
+<tr>
+    <td>Mobile no </td>
+    <td>{{ i.mno }}</td>
+</tr>
+<tr>
+    <td>Address</td>
+    <td>{{ i.address }}</td>
+</tr>
+<tr>
+    <td>Shop name</td>
+    <td>{{ i.shopname }}</td>
+</tr>
+<tr>
+    <td>username</td>
+    <td>{{ i.username }}</td>
+</tr>
+<tr>
+    <td>password</td>
+    <td>{{ i.password }}</td>
+</tr>
+
+{% endfor %}
+
+            </table>
+
+{% endif %}
+
+
+
+        </div>
+
+
+        <div class="col col-12 col-sm-2 col-lg-2 col-xl-2">
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
