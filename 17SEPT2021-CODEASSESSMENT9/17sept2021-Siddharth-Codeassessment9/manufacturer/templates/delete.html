@@ -1,0 +1,78 @@
+{% extends 'adminview.html' %}
+{% block mycontent %}
+
+<style>
+    #nav1{
+        background-color: white;
+    }
+    .background{
+        background-color: whitesmoke;
+        width: 100%;
+    }
+  </style>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+           <form action="http://127.0.0.1:8000/delete_search_api/" method="post">
+            <table class="background">
+                <tr>
+                    <td><h6>USERNAME</h6></td>
+                    <td><input required name="username"  type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><center><button type="submit" class="btn btn-outline-secondary"><h6>SEARCH</h6></button></center></td>
+                </tr>
+            </table>
+           </form>
+           {% if data %}
+           <form action="http://127.0.0.1:8000/manufacturer/delete_api/" method="post">
+            <table class="table table-borderless">
+                  {% for i in data %}
+                  <tr>
+                    <td></td>
+                    <td><input name="newid" value="{{i.id}}" type="hidden" class="form-control"></td>
+                </tr>
+                 <tr>
+                     <td>NAME</td>
+                     <td><input name="newname" value="{{i.name}}" type="text" class="form-control"></td>
+                 </tr>
+               
+                  <tr>
+                      <td>ADDRESS</td>
+                      <td><input name="newaddress" value="{{i.address}}" type="text" class="form-control"></td>
+                  </tr>
+                  <tr>
+                   <td>SHOP NAME</td>
+                   <td><input name="newsname" value="{{i.newsname}}" type="text" class="form-control"></td>
+                 </tr>
+                 <tr>
+                     <td>MOBILE</td>
+                     <td><input name="newmobile" value="{{i.mobile}}" type="text" class="form-control"></td>
+                   </tr>
+                   <tr>
+                     <td>USERNAME</td>
+                     <td><input name="newusername" value="{{i.username}}" type="text" class="form-control"></td>
+                   </tr>
+
+                   <tr>
+                     <td>PASSWORD</td>
+                     <td><input name="newpassword" value="{{i.password}}" type="file" class="form-control"></td>
+                   </tr>
+                   <tr>
+                       <td></td>
+                       <td> <center> <button type="submit" class="btn btn-outline-secondary">DELETE</button></center></td>
+                   </tr>
+                  {% endfor %}
+                </table>
+            </form>
+
+           {% endif %}
+        </div>
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+     
+{% endblock %}
