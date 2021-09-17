@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<style>
+
+body{
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 20px;
+  }
+
+  h1{
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    font-size: 40px;
+    text-shadow: 2px 2px #FF0000;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    background: linear-gradient(#43cea2,#4e93d8);
+         
+        } 
+
+    div{
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+    }
+
+    nav{
+        background-color:#609fc9;
+        font-family: "Times New Roman", Times, serif;
+        text-align: center;
+          background: linear-gradient(#43cea2,#4e93d8);
+          }
+    img{
+    border-radius: 10px;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    
+    }
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="/static/vflogo.gif"  style="width:142px;height:64px;" >
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- <marquee width="60%" direction="left" height="80px" > -->
+            <h1>ADMIN REGISTRATION</h1>
+            <!-- </marquee> -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="btn btn-light" href="http://127.0.0.1:8000/voice/adminhomepage"><b>HOME</b></a></li>
+               
+    
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+    <!-- <h1><b>Admin Registration</b></h1> -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+            <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+                <form action="./adminRegistration" method="POST" enctype="multipart/form-data">
+                    <table class="table table-borderless">
+            
+                        <tr>
+                            <td><b>Name</b></td>
+                            <td><b><input name="ename" type="text" placeholder="Name" class="form-control"></b></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Email</b></td>
+                            <td><b><input name="eemail" type="email" placeholder="Email" class="form-control"></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Password</b></td>
+                            <td><b><input name="epassword" type="password" placeholder="Password" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Mobile</b></td>
+                            <td><b><input name="emobile" type="text" placeholder="Mobile" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button class="btn btn-success" formaction="adminRegistration"><b>Register</b></button></td>
+                        </tr>
+                    </table>
+                </form>
+        </div>
+            <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
