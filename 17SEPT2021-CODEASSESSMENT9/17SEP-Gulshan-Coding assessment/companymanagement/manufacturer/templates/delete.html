@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../deleteapi/" method="POST">
+        <table class="table table-borderless">
+            <center>
+                <h1 style="color: black;"> <marquee behavior="scroll" direction="left">Delete Flat</marquee> </h1>
+                </center>
+            <tr>
+                <td style="color:black;"> <b>Building No</b> </td>
+                <td><input name="bulding_no" placeholder="Enter Building No." type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><center><button type="submit" class="btn btn-success">Search</button></center></td>
+            </tr>
+        </tablack
+    </form>
+         {%  if data %}
+         <form action="../deletedata/" method="post">
+            <table class="table table-borderless table-striped">
+                {% for i in data %}
+               
+                <tr>
+                    <td>Name</td>
+                    <td><input  name="customer_name" type="text" class="form-control"></td>
+                </tr>
+                  
+                <tr>
+                    <td>Date Of Birth</td>
+                    <td><input  name="customer_DOB" type="date" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input name="gender" type="radio" value="male" >Male
+                        <input name="gender" type="radio" value="female" >Female
+                        <input name="gender" type="radio" value="others" >Others</td>
+                </tr>
+                <tr>
+                    <td>Permanent Address</td>
+                    <td><input  name="address" type="text" class="form-control"></td>
+                </tr>
+                
+                <tr>
+                    <td>Pincode</td>
+                    <td><input  name="pincode" type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input pattern="[6-9]{1}[0-9]{9}" name="mobileno" type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  name="email" type="email" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Adharno</td>
+                    <td><input name="adharno" type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="center"><button type="submit" class="btn btn-danger">DELETE</button></td>
+                </tr>
+
+
+
+
+
+                {% endfor %}
+
+         </table>
+        </form>
+         {% endif %}
+    </div>
+</body>
+</html>

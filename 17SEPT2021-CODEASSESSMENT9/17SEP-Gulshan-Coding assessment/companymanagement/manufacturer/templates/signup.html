@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+                <div class="col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+                <div class="col col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+                    <center><header style="color: rgb(252, 251, 250) ; font-size: large; font-style: Arial;" >REGISTERATION FORM</header></center>
+    
+                    <center>
+                        <form action="http://127.0.0.1:8000/regcustomer/" method="post" enctype="multipart/form-data">
+                            <!-- {% csrf_token %}
+                            {{ form.media }}
+                            {{ form.as_p }} -->
+        
+                          <table class="table table-borderless" class="form-control">
+                           
+                            <tr>
+                                <td>Name</td>
+                                <td><input  name="customer_name" type="text" class="form-control"></td>
+                            </tr>
+                              
+                            <tr>
+                                <td>Date Of Birth</td>
+                                <td><input  name="customer_DOB" type="date" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td><input name="gender" type="radio" value="male" >Male
+                                    <input name="gender" type="radio" value="female" >Female
+                                    <input name="gender" type="radio" value="others" >Others</td>
+                            </tr>
+                            <tr>
+                                <td>Permanent Address</td>
+                                <td><input  name="address" type="text" class="form-control"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Pincode</td>
+                                <td><input  name="pincode" type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>Mobile Number</td>
+                                <td><input pattern="[6-9]{1}[0-9]{9}" name="mobileno" type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  name="email" type="email" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>Adharno</td>
+                                <td><input name="adharno" type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>product type</td>
+                                <td><select name="product_type" id="" class="form-control">           
+                                    <option value="Pre-paid">Prepaid</option>
+                                    <option value="Postpaid">Postpaid</option>
+                                    <option value="Dongle">Dongle</option>
+                                    </select></td>
+        
+                            </tr>
+                            
+                            <tr>
+                                <td>User Name</td>
+                                <td><input name="customer_username" type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>customer_password</td>
+                                <td><input name="customer_password" type="password" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <tr>
+                                    <td>Customer Photo </td>
+                                    <td><input name="customer_photo" type="file" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Customer ID Proof</td>
+                                    <td><input name="customer_idfile" type="file" class="form-control" placeholder="Upload Image Format(jpg/png)"></td>
+                                </tr> 
+                            
+                            <!-- <tr>
+                                <td>Adhar Pic </td>
+                                <td><input name="adhar_pic" type="file" class="form-control"></td>
+                            </tr> -->
+                            <tr>
+                                <td><input type="checkbox" ></td>
+                                <td>Agree Terms and Condition</td>
+                            </tr>
+                            
+                            <tr>
+                                <td></td>
+                                <td><button  type="submit">REGISTER</button></td>
+                            </tr>
+                        </table>
+                        </form>
+                    </div>
+</body>
+</html>
